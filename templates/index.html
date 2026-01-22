@@ -1,18 +1,71 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Attendance Tool</title>
+}
+
+
+p {
+color: #6b7280;
+margin-bottom: 1.5rem;
+}
+
+
+input[type="file"] {
+width: 100%;
+margin-bottom: 1.5rem;
+}
+
+
+button {
+width: 100%;
+padding: 0.75rem;
+border: none;
+border-radius: 8px;
+background-color: #4f46e5;
+color: white;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.2s ease;
+}
+
+
+button:hover {
+background-color: #4338ca;
+}
+
+
+.error {
+margin-top: 1rem;
+color: #dc2626;
+font-weight: bold;
+}
+
+
+footer {
+margin-top: 1.5rem;
+font-size: 0.8rem;
+color: #9ca3af;
+}
+</style>
 </head>
 <body>
-    <h1>Attendance Tool</h1>
+<div class="card">
+<h1>Attendance Tool</h1>
+<p>Upload your attendance CSV or Excel file to generate a summary.</p>
 
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".csv,.xlsx,.xls" required>
-        <button type="submit">Generate Attendance Summary</button>
-    </form>
 
-    {% if error %}
-        <p style="color:red;">{{ error }}</p>
-    {% endif %}
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file" accept=".csv,.xlsx,.xls" required>
+<button type="submit">Generate Attendance Summary</button>
+</form>
+
+
+{% if error %}
+<div class="error">{{ error }}</div>
+{% endif %}
+
+
+<footer>
+Powered by Colin's Attendance System
+</footer>
+</div>
 </body>
 </html>
