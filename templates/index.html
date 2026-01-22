@@ -8,15 +8,24 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #DEDEDE;
+            background: #f4f6f8;
             color: #111;
         }
 
         .container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
+        }
+
+        /* Logo styling */
+        .logo {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 20px;
         }
 
         .card {
@@ -27,14 +36,6 @@
             padding: 30px;
             border: 1px solid #e1e5ea;
             text-align: center;
-        }
-
-        /* Logo styling */
-        .logo {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-            margin-bottom: 15px;
         }
 
         h1 {
@@ -87,10 +88,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <!-- Logo goes here -->
-            <img src="Logo.png" alt="Logo" class="logo">
+        <!-- Logo above the card -->
+        <img src="logo.png" alt="Logo" class="logo">
 
+        <div class="card">
             <h1>Attendance Tool</h1>
             <p class="subtitle">Upload a file to generate an attendance summary</p>
 
