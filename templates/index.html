@@ -1,89 +1,104 @@
 <!DOCTYPE html>
-}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tool</title>
+    <style>
+        /* Background */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;  /* Light grey */
+            color: #111;           /* Black text */
+        }
 
+        /* Centered container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-p {
-color: #6b7280;
-margin-bottom: 1.5rem;
-}
+        /* Card */
+        .card {
+            background: #ffffff;        /* White card */
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            width: 420px;
+            padding: 30px;
+            border: 1px solid #e1e5ea;
+        }
 
+        /* Header */
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #0f2b4a; /* Dark blue */
+            text-align: center;
+        }
 
-input[type="file"] {
-width: 100%;
-margin-bottom: 1.5rem;
-}
+        p.subtitle {
+            margin-top: 8px;
+            text-align: center;
+            color: #6b7280;  /* Grey */
+            font-size: 14px;
+        }
 
+        /* Form styling */
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-button {
-width: 100%;
-padding: 0.75rem;
-border: none;
-border-radius: 8px;
-background-color: #4f46e5;
-color: white;
-font-size: 1rem;
-cursor: pointer;
-transition: background-color 0.2s ease;
-}
+        input[type="file"] {
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
 
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #1d4ed8;  /* Blue */
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
 
-button:hover {
-background-color: #4338ca;
-}
+        button:hover {
+            background: #1e40af;  /* Darker blue */
+        }
 
-
-.error {
-margin-top: 1rem;
-color: #dc2626;
-font-weight: bold;
-}
-
-
-footer {
-margin-top: 1.5rem;
-font-size: 0.8rem;
-color: #9ca3af;
-}
-</style>
+        /* Error message */
+        .error {
+            color: #b91c1c;        /* Red */
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<div class="card">
-<h1>Attendance Tool</h1>
-<p>Upload your attendance CSV or Excel file to generate a summary.</p>
+    <div class="container">
+        <div class="card">
+            <h1>Attendance Tool</h1>
+            <p class="subtitle">Upload a file to generate an attendance summary</p>
 
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".csv,.xlsx,.xls" required>
+                <button type="submit">Generate Attendance Summary</button>
+            </form>
 
-<form method="POST" enctype="multipart/form-data">
-<input type="file" name="file" accept=".csv,.xlsx,.xls" required>
-<button type="submit">Generate Attendance Summary</button>
-</form>
-
-
-{% if error %}
-<div class="error">{{ error }}</div>
-{% endif %}
-
-
-<footer>
-Powered by Colin's Attendance System
-</footer>
-</div>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
-
-<form method="POST" enctype="multipart/form-data">
-<inp<form method="POST" enctype="multipart/form-data">
-<input type="file" name="file" accept=".csv,.xlsx,.xls" required>
-<button type="submit">Generate Attendance Summary</button>
-</form>
-
-
-{% if error %}
-<p style="color:red;">{{ error }}</p>
-{% endif %}ut type="file" name="file" accept=".csv,.xlsx,.xls" required>
-<button type="submit">Generate Attendance Summary</button>
-</form>
-
-
-{% if error %}
-<p style="color:red;">{{ error }}</p>
-{% endif %}
