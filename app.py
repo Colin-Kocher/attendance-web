@@ -13,7 +13,7 @@ TIMESTAMP_COL = "event.published"
 NAME_COL = "actor.display_name"
 
 LATE_ENTRY_TIME = time(10, 0)      # 10:00 AM
-EXPECTED_EXIT_TIME = time(18, 0)   # 6:00 PM
+EXPECTED_EXIT_TIME = time(16, 0)   # 4:00 PM
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -106,4 +106,5 @@ def index():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
 
